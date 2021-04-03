@@ -1,0 +1,152 @@
+:root {
+  --color-accent: #f1ee58;
+}
+
+.background {
+  background-image: url('./brent-ninaber-mLnG4BkTz54-unsplash.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.keys__key {
+  display: flex;
+  flex-direction: column;
+  margin: 0.2rem;
+  border: 0.1rem solid white;
+  border-radius: 50%;
+  padding: 1rem 0.2rem;
+  width: 5.5rem;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  text-shadow: 0 0 0.5rem black;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+}
+
+.keys__key_a {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.keys__key_w {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.keys__key_e {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.keys__key_f {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.keys__key_g {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.keys__key_h {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+.keys__key_u {
+  grid-column: 7;
+  grid-row: 1;
+}
+
+.keys__key_i {
+  grid-column: 8;
+  grid-row: 1;
+}
+
+.keys__key_l {
+  grid-column: 9;
+  grid-row: 2;
+}
+
+.keys__key_playing {
+  transform: scale(1.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 1rem var(--color-accent);
+}
+
+.letter {
+  font-size: 4rem;
+}
+
+.sound {
+  color: var(--color-accent);
+  letter-spacing: 0.05rem;
+}
+
+.link {
+  position: relative;
+  box-sizing: border-box;
+  color: #535353;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 0 2px 3px #76767680;
+  transition: all 0.3s ease-in;
+}
+
+.link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #767676;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  box-shadow: 0 2px 5px #76767660;
+}
+
+.link:hover {
+  position: relative;
+  text-shadow: 0 2px 10px #76767690;
+}
+
+.link:hover:before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.attribution {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  padding: 6px 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background-color: rgb(245 245 245 / 70%);
+  color: black;
+  font-size: 0.7rem;
+}

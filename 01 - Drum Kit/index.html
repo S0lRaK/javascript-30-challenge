@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="background">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Drum Kit</title>
+  </head>
+  <body class="container">
+    <section class="keys">
+      <div data-key="a" class="keys__key keys__key_a">
+        <kbd class="letter">a</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="w" class="keys__key keys__key_w">
+        <kbd class="letter">w</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="e" class="keys__key keys__key_e">
+        <kbd class="letter">e</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="f" class="keys__key keys__key_f">
+        <kbd class="letter">f</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="g" class="keys__key keys__key_g">
+        <kbd class="letter">g</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="h" class="keys__key keys__key_h">
+        <kbd class="letter">h</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="u" class="keys__key keys__key_u">
+        <kbd class="letter">u</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="i" class="keys__key keys__key_i">
+        <kbd class="letter">i</kbd>
+        <span class="sound">tink</span>
+      </div>
+      <div data-key="l" class="keys__key keys__key_l">
+        <kbd class="letter">l</kbd>
+        <span class="sound">tom</span>
+      </div>
+    </section>
+
+    <section class="audios">
+      <audio src="sounds/boom.wav" data-key="a"></audio>
+      <audio src="sounds/clap.wav" data-key="w"></audio>
+      <audio src="sounds/hihat.wav" data-key="e"></audio>
+      <audio src="sounds/kick.wav" data-key="f"></audio>
+      <audio src="sounds/openhat.wav" data-key="g"></audio>
+      <audio src="sounds/ride.wav" data-key="h"></audio>
+      <audio src="sounds/snare.wav" data-key="u"></audio>
+      <audio src="sounds/tink.wav" data-key="i"></audio>
+      <audio src="sounds/tom.wav" data-key="l"></audio>
+    </section>
+
+    <footer>
+      <p class="attribution">
+        Photo by
+        <a
+          class="link"
+          href="https://unsplash.com/@brentninaber?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Brent Ninaber</a
+        >
+        on
+        <a
+          class="link"
+          href="https://unsplash.com/@s0lrak/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Unsplash</a
+        >
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

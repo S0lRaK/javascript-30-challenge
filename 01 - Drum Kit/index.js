@@ -1,19 +1,19 @@
-const playSound = (e) => {
-  const audio = document.querySelector(`audio[data-key="${e.key}"]`)
+const playSound = (event) => {
+  const audio = document.querySelector(`audio[data-key="${event.key}"]`)
   if (!audio) return // stop function run if there is no audio-key association
   audio.currentTime = 0 // set audio to start
   audio.play()
 }
 
-const addStyleClass = (e) => {
-  const key = document.querySelector(`.keys__key[data-key="${e.key}"`)
+const addStyleClass = (event) => {
+  const key = document.querySelector(`.keys__key[data-key="${event.key}"`)
+  if (!key) return // stop function run if there is no key specific class
   key.classList.toggle('keys__key_playing')
 }
 
-// cannot be anonymous func because this then comes from parent scope (Window)
-function removeStyleClass(e) {
-  if (e.propertyName !== 'transform') return
-  this.classList.remove('keys__key_playing')
+const removeStyleClass = (event) => {
+  if (event.propertyName !== 'transform') return
+  event.target.classList.remove('keys__key_playing')
 }
 
 document.addEventListener('keydown', playSound)

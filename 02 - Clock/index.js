@@ -7,19 +7,25 @@ const handSecond = document.querySelector('.hand--sec')
 const handMinute = document.querySelector('.hand--min')
 const handHour = document.querySelector('.hand--hour')
 
-const setClockHands = (now = new Date()) => {
+const tickAudio = new Audio('tick.mp3')
+
+const setClock = (now = new Date()) => {
   const seconds = now.getSeconds()
   const secondsDegrees =
     (seconds / SECONDS_IN_A_MIN) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
   handSecond.style.transform = `rotate(${secondsDegrees}deg)`
 
   const minutes = now.getMinutes()
-  const minutesDegrees = ((minutes / MINS_IN_AN_HOUR) * CIRCLE_DEGREES) + OFFSET_ROTATION_DEGREES
+  const minutesDegrees =
+    (minutes / MINS_IN_AN_HOUR) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
   handMinute.style.transform = `rotate(${minutesDegrees}deg)`
 
   const hours = now.getHours()
-  const hoursDegrees = ((hours / 12) * CIRCLE_DEGREES) + OFFSET_ROTATION_DEGREES
+  const hoursDegrees = (hours / 12) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
   handHour.style.transform = `rotate(${hoursDegrees}deg)`
+
+  tickAudio.currentTime = 0 // set audio to start
+  tickAudio.play()
 }
 
-setInterval(setClockHands, 1000)
+setInterval(setClock, 1000)

@@ -22,11 +22,16 @@ const setClock = (now = new Date()) => {
 
   const minutes = now.getMinutes()
   const minutesDegrees =
-    (minutes / MINS_IN_AN_HOUR) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
+    (minutes / MINS_IN_AN_HOUR) * CIRCLE_DEGREES +
+    OFFSET_ROTATION_DEGREES +
+    (secondsDegrees - OFFSET_ROTATION_DEGREES) / MINS_IN_AN_HOUR
   handMinute.style.transform = `rotate(${minutesDegrees}deg)`
 
   const hours = now.getHours()
-  const hoursDegrees = (hours / 12) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
+  const hoursDegrees =
+    (hours / 12) * CIRCLE_DEGREES +
+    OFFSET_ROTATION_DEGREES +
+    (minutesDegrees - OFFSET_ROTATION_DEGREES) / 12
   handHour.style.transform = `rotate(${hoursDegrees}deg)`
 
   playSound()

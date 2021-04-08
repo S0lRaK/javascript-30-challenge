@@ -1,5 +1,7 @@
 :root {
   --color-accent: #f1ee58;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .background {
@@ -8,8 +10,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .container {
@@ -104,6 +104,19 @@
   letter-spacing: 0.05rem;
 }
 
+.attribution {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  padding: 6px 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background-color: rgb(245 245 245 / 70%);
+  color: black;
+  font-size: 0.7rem;
+}
+
 .link {
   position: relative;
   box-sizing: border-box;
@@ -136,17 +149,4 @@
 .link:hover:before {
   transform-origin: bottom left;
   transform: scaleX(1);
-}
-
-.attribution {
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin-right: 1rem;
-  padding: 6px 10px;
-  border: 1px solid #d1d1d1;
-  border-radius: 4px;
-  background-color: rgb(245 245 245 / 70%);
-  color: black;
-  font-size: 0.7rem;
 }

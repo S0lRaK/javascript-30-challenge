@@ -15,8 +15,7 @@ const playSound = () => {
   tickAudio.play()
 }
 
-const setClock = (now = new Date()) => {
-  const seconds = now.getSeconds()
+const setClockAnalog = (seconds, minutes, hours) => {
   const secondsDegrees =
     (seconds / SECONDS_IN_A_MIN) * CIRCLE_DEGREES + OFFSET_ROTATION_DEGREES
 
@@ -28,21 +27,37 @@ const setClock = (now = new Date()) => {
 
   handSecond.style.transform = `rotate(${secondsDegrees}deg)`
 
-  const minutes = now.getMinutes()
   const minutesDegrees =
     (minutes / MINS_IN_AN_HOUR) * CIRCLE_DEGREES +
     OFFSET_ROTATION_DEGREES +
     (secondsDegrees - OFFSET_ROTATION_DEGREES) / MINS_IN_AN_HOUR
   handMinute.style.transform = `rotate(${minutesDegrees}deg)`
 
-  const hours = now.getHours()
   const hoursDegrees =
     (hours / HOURS_IN_12_HOUR_CLOCK) * CIRCLE_DEGREES +
     OFFSET_ROTATION_DEGREES +
     (minutesDegrees - OFFSET_ROTATION_DEGREES) / HOURS_IN_12_HOUR_CLOCK
   handHour.style.transform = `rotate(${hoursDegrees}deg)`
+}
 
+const digitalSecond = document.querySelector('.clock-digital__segment.sec')
+const digitalMinute = document.querySelector('.clock-digital__segment.min')
+const digitalHour = document.querySelector('.clock-digital__segment.hour')
+
+const setClockDigital = (seconds, minutes, hours) => {
+  digitalSecond.textContent = seconds < 10 ? '0' + seconds : seconds
+  digitalMinute.textContent = minutes < 10 ? '0' + minutes : minutes
+  digitalHour.textContent = hours < 10 ? '0' + hours : hours
+}
+
+const setClocks = (now = new Date()) => {
+  const seconds = now.getSeconds()
+  const minutes = now.getMinutes()
+  const hours = now.getHours()
+
+  setClockAnalog(seconds, minutes, hours)
+  setClockDigital(seconds, minutes, hours)
   playSound()
 }
 
-setInterval(setClock, 1000)
+setInterval(setClocks, 1000)

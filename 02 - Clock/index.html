@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" class="background">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Analog Clock</title>
-</head>
-<body class="container">
-  <div class="clock">
-    <div class="clock__face">
-      <div class="hand hand--hour"></div>
-      <div class="hand hand--min"></div>
-      <div class="hand hand--sec"></div>
-    </div>
-  </div>
-  <script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Real-Time Clock</title>
+  </head>
+  <body class="container">
+    <section>
+      <div class="clock-analog">
+        <div class="clock__face">
+          <div class="hand hand--hour"></div>
+          <div class="hand hand--min"></div>
+          <div class="hand hand--sec"></div>
+        </div>
+      </div>
+      <div class="clock-digital">
+        <span class="clock-digital__segment hour"></span>
+        :
+        <span class="clock-digital__segment min"></span>
+        :
+        <span class="clock-digital__segment sec"></span>
+      </div>
+    </section>
+    <footer>
+      <p class="attribution">
+        Photo by
+        <a
+          class="link"
+          href="https://unsplash.com/@susannefeldt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Susanne Feldt</a
+        >
+        on
+        <a
+          class="link"
+          href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Unsplash</a
+        >
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
 </html>

@@ -8,5 +8,5 @@
 
 My solutions for the JavaScript 30 Day Challenge ([https://JavaScript30.com](https://JavaScript30.com)) from [Wes Bos](https://github.com/wesbos)
 
-1. [Drum Kit](./01%20-%20Drum%20Kit)
-2. [Analog Clock](./02%20-%20Clock)
+1. [Drum Kit](./01-Drum-Kit)
+2. [Analog Clock](./02-Clock)

@@ -8,7 +8,7 @@ const handSecond = document.querySelector('.hand--sec')
 const handMinute = document.querySelector('.hand--min')
 const handHour = document.querySelector('.hand--hour')
 
-const tickAudio = new Audio('tick.mp3')
+const tickAudio = new Audio('sounds/tick.mp3')
 
 const playSound = () => {
   tickAudio.currentTime = 0 // set audio to start
